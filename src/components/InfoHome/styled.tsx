@@ -14,10 +14,12 @@ export const Row = styled.div`
     margin: 30px 0 0 0;
     padding: 40px 30px;
     border: solid 1px #EFEFEF;
-    display: flex;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
 `
 
 export const contentInfo = styled.div`

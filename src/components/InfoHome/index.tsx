@@ -1,28 +1,24 @@
 import * as S from "./styled";
 import Title from "../Title";
 import { Container } from "../Container";
-import React from 'react'
-import YouTube, {YouTubeProps} from "react-youtube";
-
-
+import React from "react";
+import YouTube, { YouTubeProps } from "react-youtube";
 
 export default function InfoHome() {
-    const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+    const onPlayerReady: YouTubeProps["onReady"] = (event) => {
         // access to player in all event handlers via event.target
         event.target.pauseVideo();
-      }
+    };
 
-      const opts: YouTubeProps['opts'] = {
-          
-        height: '268',
-        width: '100%',
+    const opts: YouTubeProps["opts"] = {
+        height: "268",
+        width: "100%",
         playerVars: {
-          // https://developers.google.com/youtube/player_parameters
-          autoplay: 1,
-          origin: 'http://localhost:3000' 
+            // https://developers.google.com/youtube/player_parameters
+            autoplay: 1,
+            origin: "http://localhost:3000",
         },
-        
-      };
+    };
     return (
         <S.InfoHome>
             <Container>
@@ -40,7 +36,11 @@ export default function InfoHome() {
                         </S.Description>
                     </S.contentInfo>
                     <S.contentVideo>
-                    <YouTube videoId="T1emn-l-k0k" opts={opts} onReady={onPlayerReady} />
+                        <YouTube
+                            videoId="T1emn-l-k0k"
+                            opts={opts}
+                            onReady={onPlayerReady}
+                        />
                     </S.contentVideo>
                 </S.Row>
             </Container>
