@@ -2,6 +2,7 @@ import * as S from "./styled";
 import Title from "../Title";
 import Link from "next/link";
 import { Container } from '../Container/index';
+import { ButtonDetails } from "../ButtonDetails";
 
 export default function PastEvents() {
   return (
@@ -34,9 +35,9 @@ export default function PastEvents() {
             </S.CardContent>
           ))}
         </S.Row>
-        <div className="row">
-          <a href="">Ver mais</a>
-        </div>
+        <S.RowButtonMoreDetails>
+                    <ButtonDetails linkHref="/oque-e" title="Ver mais" />
+                </S.RowButtonMoreDetails>
       </Container>
     </S.PastEvents>
   );

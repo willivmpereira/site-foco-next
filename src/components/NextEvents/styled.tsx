@@ -86,6 +86,8 @@ export const CardInfoDivider = styled.div`
     margin: 1rem 0;
 `
 
-export const BtnMoreDetails = styled.a`
-    
+export const RowButtonMoreDetails = styled.div`
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
 `

@@ -13,6 +13,7 @@ const Home: NextPage = () => {
         <>
             <Head>
                 <title>Descomplica</title>
+                <meta name="description" content="Descomplica" />
             </Head>
             <NavBar />
             <Header />

@@ -20,6 +20,10 @@ export const Row = styled.div`
     gap: 1rem;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const contentInfo = styled.div`

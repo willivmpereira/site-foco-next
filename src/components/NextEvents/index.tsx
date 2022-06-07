@@ -1,56 +1,63 @@
 import * as S from "./styled";
 import Title from "../Title";
 import Link from "next/link";
-import Image from 'next/image'
 import { RenderIf } from "../RenderIf";
 import { useEffect, useState } from "react";
-import { Container } from '../Container/index';
+import { Container } from "../Container/index";
+import { ButtonDetails } from "../ButtonDetails";
+import { DataDescomplica } from "../../pages/api/descomplica-data";
+
+
 
 export default function NextEvents() {
-  const [data, setData] = useState<any>();
+    const [descomplicaData, setDescomplicaData] = useState<DataDescomplica[]>();
 
-  useEffect(() => {
-    fetch("https://api.github.com/users/brouwilliam")
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data)
-      });
-  }, []);
+    useEffect(() => {
+        fetch("/api/descomplica-data")
+            .then((response) => response.json())
+            .then((data) => {
+                setDescomplicaData(data);
+            });
+    }, []);
 
-  return (
-    <S.NextEvents>
-      <Container>
-        <Title text="Próximos " textBold="eventos"  />
-        <S.Row>
-          {Array.from({ length: 3 }).map((_, index) => (
-            <S.CardContent key={index}>
-              <S.CardThumb>
-                <S.CardFigure>
-                  <RenderIf condition={!!data?.avatar_url}>
-                    <S.CardInfoImg src={data?.avatar_url} 
-                    alt="Avatar image"
-                    width={351}
-                    height={351}
-                    layout="responsive"/>
-                  </RenderIf>
-                </S.CardFigure>
-              </S.CardThumb>
-              <S.CardInfo>
-                <S.CardInfoTitle>{data?.name}</S.CardInfoTitle>
-                <S.CardInfoPartner>Parceiro: Ame</S.CardInfoPartner>
-                <S.CardInfoDate>Data: 29/04/2022</S.CardInfoDate>
-                <S.CardInfoDivider />
-                <Link href="/">
-                  <S.CardInfoLink>Assistir</S.CardInfoLink>
-                </Link>
-              </S.CardInfo>
-            </S.CardContent>
-          ))}
-        </S.Row>
-        <div className="row">
-          <a href="">Ver mais</a>
-        </div>
-      </Container>
-    </S.NextEvents>
-  );
+    return (
+        <S.NextEvents>
+            <Container>
+                <Title text="Próximos " textBold="eventos" />
+                <S.Row>
+                    {descomplicaData?.map((data, index) => (
+                        <S.CardContent key={index}>
+                            <S.CardThumb>
+                                <S.CardFigure>
+                                    <RenderIf condition={!!data?.thumb}>
+                                        <S.CardInfoImg
+                                            src={data?.thumb}
+                                            alt="Avatar image"
+                                            width={351}
+                                            height={351}
+                                            layout="responsive"
+                                        />
+                                    </RenderIf>
+                                </S.CardFigure>
+                            </S.CardThumb>
+                            <S.CardInfo>
+                                <S.CardInfoTitle>oi</S.CardInfoTitle>
+                                <S.CardInfoPartner>
+                                    Parceiro: {data.partner}
+                                </S.CardInfoPartner>
+                                <S.CardInfoDate>Data: {data?.date}</S.CardInfoDate>
+                                <S.CardInfoDivider />
+                                <Link href="/">
+                                    <S.CardInfoLink>Assistir</S.CardInfoLink>
+                                </Link>
+                            </S.CardInfo>
+                        </S.CardContent>
+                    ))}
+                </S.Row>
+                <S.RowButtonMoreDetails>
+                    <ButtonDetails linkHref="/oque-e" title="Ver mais" />
+                </S.RowButtonMoreDetails>
+            </Container>
+        </S.NextEvents>
+    );
 }

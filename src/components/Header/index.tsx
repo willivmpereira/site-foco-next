@@ -1,6 +1,6 @@
 import * as S from './styled';  
 import gestoCanaisImg from '../../../public/img/gestor-de-canais-topo.png';
-import { Container } from '../Container/index';
+import { Container } from '../Container';
 
 export default function Header(){
     return (

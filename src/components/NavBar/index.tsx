@@ -1,21 +1,29 @@
 import * as S from "./styled";
 import Link from "next/link";
 import { Container } from "../Container/index";
+import Image from "next/image";
+import logoDescomplica from "../../../public/img/descomplica_horizontal.png";
 
 export default function NavBar() {
+
+    function navbarShow(){
+        console.log("show");
+    }
+
     return (
         <S.TopNavBar>
             <Container>
                 <S.Nav>
-                    <S.NavLink href="/">
-                        <S.StyledImg
-                            src={"/img/descomplica_horizontal.png"}
-                            alt="Logo Descomplica"
-                            width={230}
-                            height={55}
-                            layout="responsive"
-                        />
-                    </S.NavLink>
+                    <Image
+                        src={logoDescomplica}
+                        alt="Logo Descomplica"
+                        width={230}
+                        height={55}
+                    />
+                    
+                    <S.ButtonNavbar onClick={navbarShow}>
+                        oi
+                    </S.ButtonNavbar>
                     <S.NavBarCollapse>
                         <S.ListLinks>
                             <S.NavItem>
@@ -38,11 +46,20 @@ export default function NavBar() {
                                     <S.NavLink>Parceiros</S.NavLink>
                                 </Link>
                             </S.NavItem>
+                            <S.DisplayFaqShow>
+                                <S.NavItem>
+                                    <Link href="/#">
+                                    <S.FaqBtn>Central de ajuda</S.FaqBtn>
+                                    </Link>
+                                </S.NavItem>
+                            </S.DisplayFaqShow>
                         </S.ListLinks>
                     </S.NavBarCollapse>
-                    <Link href="#">
-                        <S.FaqBtn>Central de ajuda</S.FaqBtn>
-                    </Link>
+                    <S.DisplayFaq>
+                        <Link href="#">
+                            <S.FaqBtn>Central de ajuda</S.FaqBtn>
+                        </Link>
+                    </S.DisplayFaq>
                 </S.Nav>
             </Container>
         </S.TopNavBar>

@@ -32,7 +32,19 @@ export const Row = styled.div`
 
 `
 
+export const ButtonNavbar = styled.button`
+    display: none;
+    
+    @media (max-width: 992px) {
+        display: block;
+    }
+`
+
 export const NavBarCollapse = styled.div`
+
+    @media (max-width: 992px){
+        display: none;
+    }
 
 `
 
@@ -40,6 +52,10 @@ export const ListLinks = styled.ul`
     display: flex;
     list-style: none;
     padding: 0;
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+    }
 `
 
 export const NavItem = styled.li`
@@ -53,6 +69,20 @@ export const NavLink = styled.a`
     margin: 8px;
     text-transform: uppercase;
     cursor: pointer;
+`
+
+export const DisplayFaqShow = styled.div`
+    display: none;
+
+    @media (max-width: 992px) {
+        display: block;
+    }
+`
+
+export const DisplayFaq = styled.div`
+    @media (max-width: 992px){
+        display: none;
+    }
 `
 
 export const FaqBtn = styled.a`

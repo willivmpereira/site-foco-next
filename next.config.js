@@ -5,7 +5,7 @@ const nextConfig = {
     styledComponents: true
   },
   images: {
-    domains: ['avatars.githubusercontent.com'],
+    domains: ['avatars.githubusercontent.com', 'focomultimidia.com'],
     deviceSizes: [320, 640, 768, 1024, 1600], 
   },
 }

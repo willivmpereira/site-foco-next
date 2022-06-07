@@ -23,7 +23,6 @@ export const custonTitleH4 = styled.h4`
     &:before{
         content: '';
         position: absolute;
-        left: 15px;
         bottom: -1px;
         width: 55px;
         height: 2px;

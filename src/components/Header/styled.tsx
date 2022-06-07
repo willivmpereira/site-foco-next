@@ -18,10 +18,19 @@ export const Grid = styled.div`
     grid-template-rows: 1fr;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const ContentInfo = styled.div`
     max-width: 445px;
+    padding: 0 15px;
+
+    @media (max-width: 992px) {
+        max-width: 100%;
+    }
 `
 
 export const TitleH1 = styled.h1`
@@ -37,10 +46,14 @@ export const SubtitleH2 = styled.h2`
     margin-top: 2rem;
     max-width: 375px;
     line-height: 2;
+
+    @media (max-width: 992px) {
+        max-width: 100%;
+    }
 `
 
 export const ContentBanner = styled.div`
-
+    padding: 0 15px;
 `
 
 export const ContentBannerImg = styled(Image)`

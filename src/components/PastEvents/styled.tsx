@@ -85,3 +85,8 @@ export const CardInfoDivider = styled.div`
     background-color: #d8d8d8;
     margin: 1rem 0;
 `
+export const RowButtonMoreDetails = styled.div`
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+`

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Image from 'next/image'
 
+export const InfoPartners = styled.div`
+    padding: 3rem 0;
+`
+
 export const Container = styled.div`
     max-width: 1140px;
     width: 100%;
@@ -11,6 +15,10 @@ export const Row = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr 1fr;
+    }
 `
 
 // export const ContentImg = styled.div`
@@ -18,6 +26,11 @@ export const Row = styled.div`
 //     justify-content: center;
 //     align-items: center;
 // `
+
+export const ImgContent = styled.figure`
+    padding: 0 15px;
+    margin: 0;
+`
 
 export const StyledImg = styled(Image)`
     filter: grayscale(100%);
@@ -29,6 +42,6 @@ export const StyledImg = styled(Image)`
     &:hover{
         filter: grayscale(0%);
         opacity: 1;
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
 `
